@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ScrollView, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; 
 
 export default function App({navigation}) {
@@ -19,60 +19,67 @@ export default function App({navigation}) {
   }
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-
-        <View style={styles.notch}>
-          <Text style={styles.time}>9:41</Text>
-          <Icon name="signal-cellular-3" size={16} style={styles.icon} /> 
-          <Icon name="wifi" size={16} style={styles.icon} /> 
-          <Icon name="battery" size={16} style={styles.icon} /> 
-        </View>
-
-        <View style={styles.profile}>
-          <View style={styles.text}>
-            <Text style={styles.txt}>Jobizz</Text>
-            <Text style={styles.welcome}>Welcome Back 👋</Text>
-            <TextInput 
-              placeholder='Let’s log in. Apply to jobs!'
-              style={styles.apply}>
-            </TextInput>
-          </View>
-          <View style={styles.field}>
-            <View style={styles.name}>
-              <TextInput 
-                placeholder='Name'
-                style={styles.nameText}
-                onChangeText={(text) => setUsername(text)}
-              />
-            </View>
-            <View style={styles.name}>
-              <TextInput 
-                placeholder='Email'
-                style={styles.nameText}
-                onChangeText={(text) => setEmail(text)}
-              />
-            </View>
-            <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-              <Text style={styles.loginButtonText}>Log In</Text>
-            </TouchableOpacity>
-          </View>
+    <ScrollView contentContainerStyle={{flexGrow: 1}}>
+      <SafeAreaView style={styles.safeArea}>
+        <View style={styles.container}>
           
-          <View style={styles.separatorContainer}>
-            <View style={styles.line} />
-            <Text style={styles.continueText}>Or continue with</Text>
-            <View style={styles.line} />
+          <View style={styles.notch}>
+            <Text style={styles.time}>9:41</Text>
+            <Icon name="signal-cellular-3" size={16} style={styles.icon} /> 
+            <Icon name="wifi" size={16} style={styles.icon} /> 
+            <Icon name="battery" size={16} style={styles.icon} /> 
           </View>
 
-          <View>
+          <View style={styles.profile}>
+            <View style={styles.text}>
+              <Text style={styles.txt}>Jobizz</Text>
+              <Text style={styles.welcome}>Welcome Back 👋</Text>
+              <Text style={styles.apply}>Let’s log in. Apply to jobs!</Text>
+            </View>
+            <View style={styles.field}>
+              <View style={styles.name}>
+                <TextInput 
+                  placeholder='Name'
+                  style={styles.nameText}
+                  onChangeText={(text) => setUsername(text)}
+                />
+              </View>
+              <View style={styles.name}>
+                <TextInput 
+                  placeholder='Email'
+                  style={styles.nameText}
+                  onChangeText={(text) => setEmail(text)}
+                />
+              </View>
+              <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+                <Text style={styles.loginButtonText}>Log In</Text>
+              </TouchableOpacity>
+            </View>
             
+            <View style={styles.separatorContainer}>
+              <View style={styles.line} />
+              <Text style={styles.continueText}>Or continue with</Text>
+              <View style={styles.line} />
+            </View>
+
+            <View style={styles.logoContainer}>
+              <Image style={styles.logo} source={require("./assets/apple logo.jpeg")} />
+              <Image style={styles.logo} source={require("./assets/Google logo.jpeg")}/>
+              <Image style={styles.logo} source={require("./assets/facebook logo.jpeg")}/>
+            </View>
+
+            <View style={styles.register}>
+              <Text style={styles.registerTxt}>Don't have an account?  
+              <Text style={styles.registerTxts}> Register</Text>
+              </Text>
+            </View>
+
           </View>
 
+          <StatusBar style="auto" />
         </View>
-
-        <StatusBar style="auto" />
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </ScrollView>
   );
 }
 
@@ -86,6 +93,7 @@ const styles = StyleSheet.create({
   },
   notch: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
   time: {
     fontWeight: '700',
@@ -114,7 +122,7 @@ const styles = StyleSheet.create({
   },
   apply: {
     fontSize: 20,
-    fontWeight: '600',
+    color: '#AFB0B6',
   },
   field: {
     marginTop: 40,
@@ -160,4 +168,25 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#AFB0B6',
   },
+  logoContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginTop: 20,
+  },
+  logo: {
+    width: 50,
+    height: 40,
+    borderRadius: 20,
+  },
+  register: {
+    marginTop: 50,
+  },
+  registerTxt: {
+    textAlign: 'center',
+    color: '#BDBEC2',
+    fontSize: 16,
+  },
+  registerTxts: {
+    color: '#356899',
+  }
 });
