@@ -24,13 +24,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
           <SafeAreaView style={styles.safeArea}>
             <View style={styles.container}>
               
-              <View style={styles.notch}>
-                <Text style={styles.time}>9:41</Text>
-                <Icon name="signal-cellular-3" size={16} style={styles.icon} /> 
-                <Icon name="wifi" size={16} style={styles.icon} /> 
-                <Icon name="battery" size={16} style={styles.icon} /> 
-              </View>
-    
               <View style={styles.profile}>
                 <View style={styles.text}>
                   <Text style={styles.txt}>Jobizz</Text>
@@ -98,18 +91,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
       container: {
         flex: 1,
         padding: 30,
-      },
-      notch: {
-        flexDirection: 'row',
-        alignItems: 'center',
-      },
-      time: {
-        fontWeight: '700',
-        fontSize: 16,
-        marginRight: 270,
-      },
-      icon: {
-        marginLeft: 5, 
       },
       profile: {
         flex: 1,

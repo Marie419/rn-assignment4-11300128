@@ -1,123 +1,204 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { ScrollView, SafeAreaView, StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 
 export default function HomePage() {
   return (
-    <ScrollView contentContainerStyle={{flexGrow: 1}}>
-      <View style={styles.hpcontainer}>
-      <View style={styles.notch}>
-        <Text style={styles.time}>9:41</Text>
-          <Icon name="signal-cellular-3" size={16} style={styles.icon} /> 
-          <Icon name="wifi" size={16} style={styles.icon} /> 
-          <Icon name="battery" size={16} style={styles.icon} /> 
-      </View>
-        <View style={styles.EA}>
-          <View style={styles.ericgmail}>
-            <Text style={styles.firstTxt}>Mawkish</Text>
-            <Text style={styles.email}>mawkish12@smb.com</Text>
-          </View>
-          <View style={styles.profileContainer}>
-            <Image style={styles.profilePic} source={require('../assets/profile.jpeg')}/>
-            <View style={styles.redot}/>
-          </View>
-        </View>
-
-        <View style={styles.searchFilter}>
-          <View style={styles.searchContainer}>
-            <Image
-              style={styles.searchIcon}
-              source={require("../assets/searchicon.png")}
-            />
-            <TextInput
-              style={styles.searchInput}
-              placeholder="Search a job position "
-              placeholderTextColor="#808080"
-              onChangeText={(text) => {}}
-            />
-          </View>
-          <TouchableOpacity style={styles.filterButton} onPress={() => {}}>
-            <Image
-              style={styles.filterIcon}
-              source={require("../assets/filter.png")}
-            />
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.jobsAll}>
-          <Text style={styles.featured}>Featured Jobs</Text>
-          <TouchableOpacity>
-            <Text style={styles.see}>See all</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.facegoopleContainer}>
-          <ImageBackground 
-            source={require('../assets/fbbg.jpeg')} 
-            style={styles.facebookContainer}
-          >
-            <View style={styles.td}>
-              <View style={styles.top}>
-                <Image style={styles.facebook} source={require("../assets/facebook.jpeg")}/>
-                <View style={styles.face}>
-                  <Text style={styles.se}>Software Engineer</Text>
-                  <Text style={styles.smallFace}>Facebook</Text>
-                </View>
-              </View>
-              <View style={styles.down}>
-                <Text style={styles.dollar}>$180,000</Text>
-                <Text style={styles.dollar}>Accra, Ghana</Text>
-              </View>
+    <SafeAreaView>
+      <ScrollView contentContainerStyle={{flexGrow: 1}}>
+        <View style={styles.hpcontainer}>
+          
+          
+          <View style={styles.EA}>
+            <View style={styles.ericgmail}>
+              <Text style={styles.firstTxt}>Mawkish</Text>
+              <Text style={styles.email}>mawkish12@smb.com</Text>
             </View>
-          </ImageBackground>
-
-          <ImageBackground 
-            source={require('../assets/googlebg.jpg')} 
-            style={styles.facebookContainer}
-          >
-            <View style={styles.td}>
-              <View style={styles.top}>
-                <Image style={styles.facebook} source={require("../assets/google.jpeg")}/>
-                <View style={styles.face}>
-                  <Text style={styles.se}>Software Engineer</Text>
-                  <Text style={styles.smallFace}>Facebook</Text>
-                </View>
-              </View>
-              <View style={styles.down}>
-                <Text style={styles.dollar}>$160,000</Text>
-                <Text style={styles.dollar}>Accra, Ghana</Text>
-              </View>
+            <View style={styles.profileContainer}>
+              <Image style={styles.profilePic} source={require('../assets/profile.jpeg')}/>
+              <View style={styles.redot}/>
             </View>
-          </ImageBackground>
-        </View>
+          </View>
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      </View>
-    </ScrollView>
+          <View style={styles.searchFilter}>
+            <View style={styles.searchContainer}>
+              <Image
+                style={styles.searchIcon}
+                source={require("../assets/searchicon.png")}
+              />
+              <TextInput
+                style={styles.searchInput}
+                placeholder="Search a job position "
+                placeholderTextColor="#808080"
+                onChangeText={(text) => {}}
+              />
+            </View>
+            <TouchableOpacity style={styles.filterButton} onPress={() => {}}>
+              <Image
+                style={styles.filterIcon}
+                source={require("../assets/filter.png")}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.jobsAll}>
+            <Text style={styles.featured}>Featured Jobs</Text>
+            <TouchableOpacity>
+              <Text style={styles.see}>See all</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.facegoopleContainer}>
+            <ScrollView horizontal style={styles.categoryScrollBox} showsHorizontalScrollIndicator={false}>
+              <ImageBackground 
+                source={require('../assets/fbbg.jpeg')} 
+                style={styles.facebookContainer}
+              >
+                <View style={styles.td}>
+                  <View style={styles.top}>
+                    <Image style={styles.facebook} source={require("../assets/facebook.jpeg")}/>
+                    <View style={styles.face}>
+                      <Text style={styles.se}>Software Engineer</Text>
+                      <Text style={styles.smallFace}>Facebook</Text>
+                    </View>
+                  </View>
+                  <View style={styles.down}>
+                    <Text style={styles.dollar}>$180,000</Text>
+                    <Text style={styles.dollar}>Accra, Ghana</Text>
+                  </View>
+                </View>
+              </ImageBackground>
+
+              <ImageBackground 
+                source={require('../assets/googlebg.jpg')} style={styles.facebookContainer}>
+                <View style={styles.td}>
+                  <View style={styles.top}>
+                    <Image style={styles.facebook} source={require("../assets/google.jpeg")}/>
+                    <View style={styles.face}>
+                      <Text style={styles.se}>Software Engineer</Text>
+                      <Text style={styles.smallFace}>Google</Text>
+                    </View>
+                  </View>
+                  <View style={styles.down}>
+                    <Text style={styles.dollar}>$160,000</Text>
+                    <Text style={styles.dollar}>Accra, Ghana</Text>
+                  </View>
+                </View>
+              </ImageBackground>
+
+              <ImageBackground 
+                source={require('../assets/applebg.jpg')} style={styles.facebookContainer}>
+                <View style={styles.td}>
+                  <View style={styles.top}>
+                    <Image style={styles.facebook} source={require("../assets/apple.jpeg")}/>
+                    <View style={styles.face}>
+                      <Text style={styles.se}>Software Engineer</Text>
+                      <Text style={styles.smallFace}>Apple</Text>
+                    </View>
+                  </View>
+                  <View style={styles.down}>
+                    <Text style={styles.dollar}>$140,000</Text>
+                    <Text style={styles.dollar}>Dallas, Texas</Text>
+                  </View>
+                </View>
+              </ImageBackground>
+            
+              <ImageBackground 
+                source={require('../assets/amazonbg.jpg')} style={styles.facebookContainer}>
+                <View style={styles.td}>
+                  <View style={styles.top}>
+                    <Image style={styles.facebook} source={require("../assets/amazon.png")}/>
+                    <View style={styles.face}>
+                      <Text style={styles.se}>Software Engineer</Text>
+                      <Text style={styles.smallFace}>Amazon</Text>
+                    </View>
+                  </View>
+                  <View style={styles.down}>
+                    <Text style={styles.dollar}>$180,000</Text>
+                    <Text style={styles.dollar}>Accra, Ghana</Text>
+                  </View>
+                </View>
+              </ImageBackground>            
+            
+              <ImageBackground 
+                source={require('../assets/microsoftbg.jpg')} style={styles.facebookContainer}>
+                <View style={styles.td}>
+                  <View style={styles.top}>
+                    <Image style={styles.facebook} source={require("../assets/microsoft.jpg")}/>
+                    <View style={styles.face}>
+                      <Text style={styles.se}>Software Engineer</Text>
+                      <Text style={styles.smallFace}>Microsoft</Text>
+                    </View>
+                  </View>
+                  <View style={styles.down}>
+                    <Text style={styles.dollar}>$160,000</Text>
+                    <Text style={styles.dollar}>Accra, Ghana</Text>
+                  </View>
+                </View>
+              </ImageBackground>
+
+              <ImageBackground 
+                source={require('../assets/netflixbg.jpeg')} style={styles.facebookContainer}>
+                <View style={styles.td}>
+                  <View style={styles.top}>
+                    <Image style={styles.facebook} source={require("../assets/netflix.png")}/>
+                    <View style={styles.face}>
+                      <Text style={styles.se}>Software Engineer</Text>
+                      <Text style={styles.smallFace}>Netflix</Text>
+                    </View>
+                  </View>
+                  <View style={styles.down}>
+                    <Text style={styles.dollar}>$150,000</Text>
+                    <Text style={styles.dollar}>Accra, Ghana</Text>
+                  </View>
+                </View>
+              </ImageBackground>
+
+              <ImageBackground 
+                source={require('../assets/twitterbg.jpeg')} style={styles.facebookContainer}>
+                <View style={styles.td}>
+                  <View style={styles.top}>
+                    <Image style={styles.facebook} source={require("../assets/amalitech.png")}/>
+                    <View style={styles.face}>
+                      <Text style={styles.se}>UI/UX Developer</Text>
+                      <Text style={styles.smallFace}>Twitter</Text>
+                    </View>
+                  </View>
+                  <View style={styles.down}>
+                    <Text style={styles.dollar}>$130,000</Text>
+                    <Text style={styles.dollar}>Accra, Ghana</Text>
+                  </View>
+                </View>
+              </ImageBackground>
+
+              <ImageBackground 
+                source={require('../assets/teslabg.jpg')} style={styles.facebookContainer}>
+                <View style={styles.td}>
+                  <View style={styles.top}>
+                    <Image style={styles.facebook} source={require("../assets/tesla.jpg")}/>
+                    <View style={styles.face}>
+                      <Text style={styles.se}>Software Engineer</Text>
+                      <Text style={styles.smallFace}>Teslae</Text>
+                    </View>
+                  </View>
+                  <View style={styles.down}>
+                    <Text style={styles.dollar}>$200,000</Text>
+                    <Text style={styles.dollar}>Accra, Ghana</Text>
+                  </View>
+                </View>
+              </ImageBackground>
+            </ScrollView>
+          </View>
+        
+        
+        
+        
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  notch: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  time: {
-    fontWeight: '700',
-    fontSize: 16,
-    marginRight: 290,
-  },
-  icon: {
-    marginLeft: 5,
-  },
   hpcontainer: {
     flex: 1,
     padding: 18,
@@ -208,7 +289,7 @@ const styles = StyleSheet.create({
   facegoopleContainer: {
     flexDirection: 'row',
     marginTop: 20,
-    gap: 20,
+    marginHorizontal: -10, 
   },
   facebookContainer: {
     width: 300,
@@ -217,6 +298,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     overflow: 'hidden',
     justifyContent: 'center',
+    marginHorizontal: 10, 
   },
   td: {
     flex: 1,
@@ -239,7 +321,7 @@ const styles = StyleSheet.create({
   },
   smallFace: {
     fontSize: 14,
-    color: '#FFFFFF',
+    color: '#fff',
   },
   down: {
     flexDirection: 'row',
